@@ -43,7 +43,7 @@ class MickeyClock:
         pygame.draw.circle(surface, (0, 0, 0), self.center, 10)
 
         # вычисление углов поворота для секунд и минут
-        sec_angle_deg = 90 - (seconds * 6)
+        sec_angle_deg = 90 - (seconds * 12)
         min_angle_deg = 90 - (minutes * 6)
 
         # отрисовка стрелок с кистями
