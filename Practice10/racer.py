@@ -19,7 +19,7 @@ YELLOW = (255, 215, 0)
 
 SCREEN_WIDTH  = 400
 SCREEN_HEIGHT = 600
-SPEED = 5
+SPEED = 8
 SCORE = 0
 COINS_COUNT = 0  # добавил счётчик монет
 
@@ -62,9 +62,9 @@ class Player(pygame.sprite.Sprite):
     def move(self):
         pressed_keys = pygame.key.get_pressed()
         if pressed_keys[K_LEFT] and self.rect.left > 0:
-            self.rect.move_ip(-5, 0)
+            self.rect.move_ip(-10, 0)
         if pressed_keys[K_RIGHT] and self.rect.right < SCREEN_WIDTH:
-            self.rect.move_ip(5, 0)
+            self.rect.move_ip(10, 0)
 
 
 # класс монеты - появляется случайно сверху и падает вниз
@@ -77,7 +77,7 @@ class Coin(pygame.sprite.Sprite):
         self.rect.center = (random.randint(20, SCREEN_WIDTH - 20), 0)
 
     def move(self):
-        self.rect.move_ip(0, SPEED - 2)
+        self.rect.move_ip(0, SPEED)
         if self.rect.top > SCREEN_HEIGHT:
             self.kill()
 
